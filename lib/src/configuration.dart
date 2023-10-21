@@ -104,7 +104,7 @@ class Configuration {
     release = config?['release']?.toString() ?? environments['SENTRY_RELEASE'];
     dist = config?['dist']?.toString() ?? environments['SENTRY_DIST'];
     version = pubspec['version'].toString();
-    name = pubspec['name'].toString();
+    name = config?['name']?.toString() ?? pubspec['name'].toString();
 
     uploadDebugSymbols =
         config?.get('upload_debug_symbols', 'upload_native_symbols') ?? true;
